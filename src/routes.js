@@ -5,6 +5,7 @@ import Menu from './components/Menu';
 import Rodape from './components/Rodape';
 import DefaultPage from './components/DefaultPage';
 import Post from './pages/Post'
+import NotFound from './components/NotFound';
 
 function AppRoutes() {
   return (
@@ -30,7 +31,7 @@ function AppRoutes() {
           </DefaultPage>
         */}
 
-        <Route path="*" element={<div>Página não encontrada</div>} />
+        <Route path="*" element={<NotFound/>} />
       </Routes>
       <Rodape />
     </BrowserRouter>
