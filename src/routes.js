@@ -6,16 +6,17 @@ import Rodape from './components/Rodape';
 import DefaultPage from './components/DefaultPage';
 import Post from './pages/Post'
 import NotFound from './components/NotFound';
+import ScrollToTop from './components/ScrollToTop';
 
 function AppRoutes() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Menu/>
       <Routes>
         <Route path="/" element={<DefaultPage/>}>
           <Route index element={<Start/>}/>
           <Route path="about-me" element={<AboutMe/>}/>
-          <Route path="posts/:id" element={<Post />} />
         </Route>
         {/* 
           Na rota "/", a estrutura a ser renderizada é: 
@@ -30,7 +31,7 @@ function AppRoutes() {
             <AboutMe/>
           </DefaultPage>
         */}
-
+        <Route path="posts/:id" element={<Post />} />
         <Route path="*" element={<NotFound/>} />
       </Routes>
       <Rodape />
